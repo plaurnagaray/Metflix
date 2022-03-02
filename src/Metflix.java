@@ -4,27 +4,24 @@ import java.util.List;
 public class Metflix {
     public List<Pelicula> peliculas = new ArrayList<>();
     public List<Serie> series = new ArrayList<>();
+    public List<Director> directores = new ArrayList<>();
+
     
 
     //Metodo que inicializa el catalogo con las pelis/series que querramos
     public void inicializarCatalogo(){
         
-        //Pelis: Titanic, Batman: el caballero de la noche
+        
         Pelicula titanic; //declara una variable que apuntara a una Pelicula
         titanic = new Pelicula(); //cree espacio de memoria y lo instancie
         //Estas ultimas 2 lineas: Pelicula titanic = new Pelicula();
-
         titanic.nombre = "Titanic";
         titanic.añoLanzamiento = 1997;
         titanic.duracion = 210; //3 hs 30 
-
         Actor actor = new Actor(); //declaro, instanciando
         actor.nombre = "Leo DiCaprio";
-
-
         //Agrego a la lista de actores del objeto tiatnic
         titanic.actores.add(actor); //metodo Add -> agregar a una lista
-
         //recien ahora estoy agregando a Titanic al catalogo
         //this: porque estoy referenciando a un atributo dentro de esta misma clase
         this.peliculas.add(titanic);
@@ -33,114 +30,86 @@ public class Metflix {
         batman.nombre = "Batman el caballero de la noche";
         batman.añoLanzamiento = 2008;
         batman.duracion = 152;
-
         //No voy a declarar otra variable actor, voy a reusar
         //siempre primero antes de reusar
         //re instanciar
         actor = new Actor(); //Creo un nuevo actor, pero referenciado en la variable actor
         actor.nombre = "Christian Bale";
-
         batman.actores.add(actor);
-
         this.peliculas.add(batman);
 
 
         //How I met your mother. Serie
-
         Serie howIMetYM = new Serie();
         howIMetYM.nombre = "How I met your mother";
         howIMetYM.añoLanzamiento = 2005;
-
         actor = new Actor();
         actor.nombre = "Neil Patrick Harris";
-
         howIMetYM.actores.add(actor);
-
         actor = new Actor();
         actor.nombre = "Cobie Smulders";
-
         howIMetYM.actores.add(actor);
-
         //T5:E11
         //Creo la temporada
         Temporada temporada = new Temporada();
         temporada.numero = 5;
-        
-
         //Creo el episodio
         Episodio episodio = new Episodio();
         episodio.nombre = "The last cigarrette";
         episodio.numero = 11;
-
         //vinculo temporada con episodio
         temporada.episodios.add(episodio);
-
         episodio = new Episodio();
         episodio.nombre = "Definitions";
         episodio.numero = 1;
-
         temporada.episodios.add(episodio);
-
-
+        Websodio ws = new Websodio();
+        ws.nombre = "Nombre websodio en internet";
+        ws.numero = 35;
+        ws.link = "http://miepisodios.com/websodio.avi";
+        temporada.episodios.add(ws);
         //Agrego la temporada
         howIMetYM.temporadas.add(temporada);    
-
         //T3
         //Creo la temporada
         temporada = new Temporada();
         temporada.numero = 3;
-        
-
         //Creo el episodio
         episodio = new Episodio();
         episodio.nombre = "Wait for it";
         episodio.numero = 1;
-
         //vinculo temporada con episodio
         temporada.episodios.add(episodio);
-
         episodio = new Episodio();
         episodio.nombre = "Little Boys";
         episodio.numero = 4;
-
         temporada.episodios.add(episodio);
-
         //Agrego la temporada
         howIMetYM.temporadas.add(temporada);    
-
         //Aca esta toda la serie con 2 temporadas y cada una con 2 episodios.
         this.series.add(howIMetYM);
 
         Serie bbt = new Serie();
         bbt.nombre = "The BigBang Theory";
         bbt.añoLanzamiento = 2007;
-
         actor = new Actor();
         actor.nombre = "Kaley Cuoco";
-
         bbt.actores.add(actor);
-
         //Creo la temporada
         temporada = new Temporada();
         temporada.numero = 1;
-
         //Creo el episodio
         episodio = new Episodio();
         episodio.nombre = "Pilot";
         episodio.numero = 1;
-
         //Vinculo temporada con episodio
         temporada.episodios.add(episodio);
-
         episodio = new Episodio();
         episodio.nombre = "The Cooper Hofstadter Polarizatio";
         episodio.numero = 9;
-
         temporada.episodios.add (episodio);
-
         //Agrego la temporada
         bbt.temporadas.add(temporada);
-
         this.series.add(bbt);
 
         Serie losSimuladores = new Serie();
@@ -160,11 +129,11 @@ public class Metflix {
 
         Pelicula elResplandor = new Pelicula();
         elResplandor.nombre = "El Resplandor";
-        elResplandor.director = new Director();
-        elResplandor.director.nombre = "Stanley Kubrick";
-        elResplandor.directores.add(director);
+        Director director = new Director();
+        director.nombre = "Stanley Kubrick";
+        this.directores.add(director);
 
-
+       
 
     }
     //metodos: buscar una peli o serie
@@ -200,7 +169,7 @@ public class Metflix {
         }
 
     public Director buscarDirector(String nombreDirector){
-        for (Director director: contenido.directores){
+        for (Director director: this.directores){
             if (director.nombre.equals(nombreDirector))
             return director;
         }

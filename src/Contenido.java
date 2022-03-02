@@ -9,8 +9,7 @@ public class Contenido {
     //creo una lista
     public List<Actor> actores = new ArrayList<>();
 
-    public List<Director> directores = new ArrayList<>();
-
+    
 
 
 
