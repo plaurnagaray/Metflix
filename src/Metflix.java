@@ -55,17 +55,20 @@ public class Metflix {
         temporada.numero = 5;
         //Creo el episodio
         Episodio episodio = new Episodio();
-        episodio.nombre = "The last cigarrette";
-        episodio.numero = 11;
+        episodio.setNombre("The last cigarrette");
+        episodio.setNumero(11);
+        episodio.setDuracion(43);
         //vinculo temporada con episodio
         temporada.episodios.add(episodio);
         episodio = new Episodio();
-        episodio.nombre = "Definitions";
-        episodio.numero = 1;
+        episodio.setNombre("Definitions");
+        episodio.setNumero(1);
+        episodio.setDuracion(41);
         temporada.episodios.add(episodio);
         Websodio ws = new Websodio();
-        ws.nombre = "Nombre websodio en internet";
-        ws.numero = 35;
+        ws.setNombre("Nombre websodio en internet");
+        ws.setNumero(35);
+        episodio.setDuracion(42);
         ws.link = "http://miepisodios.com/websodio.avi";
         temporada.episodios.add(ws);
         //Agrego la temporada
@@ -76,13 +79,14 @@ public class Metflix {
         temporada.numero = 3;
         //Creo el episodio
         episodio = new Episodio();
-        episodio.nombre = "Wait for it";
-        episodio.numero = 1;
+        episodio.setNombre("Wait for it");
+        episodio.setNumero(1);
+        episodio.setDuracion(43);
         //vinculo temporada con episodio
         temporada.episodios.add(episodio);
         episodio = new Episodio();
-        episodio.nombre = "Little Boys";
-        episodio.numero = 4;
+        episodio.setNombre("Little Boys");
+        episodio.setNumero(4);
         temporada.episodios.add(episodio);
         //Agrego la temporada
         howIMetYM.temporadas.add(temporada);    
@@ -100,13 +104,13 @@ public class Metflix {
         temporada.numero = 1;
         //Creo el episodio
         episodio = new Episodio();
-        episodio.nombre = "Pilot";
-        episodio.numero = 1;
+        episodio.setNombre("Pilot");
+        episodio.setNumero(1);
         //Vinculo temporada con episodio
         temporada.episodios.add(episodio);
         episodio = new Episodio();
-        episodio.nombre = "The Cooper Hofstadter Polarizatio";
-        episodio.numero = 9;
+        episodio.setNombre("The Cooper Hofstadter Polarizatio");
+        episodio.setNumero(9);
         temporada.episodios.add (episodio);
         //Agrego la temporada
         bbt.temporadas.add(temporada);
@@ -121,8 +125,8 @@ public class Metflix {
         temporada = new Temporada();
         temporada.numero = 1;
         episodio = new Episodio();
-        episodio.nombre = "Capitulo 1";
-        episodio.numero = 1;
+        episodio.setNombre("Capitulo 1");
+        episodio.setNumero(1);
         temporada.episodios.add(episodio);
         losSimuladores.temporadas.add(temporada);
         this.series.add(losSimuladores);
